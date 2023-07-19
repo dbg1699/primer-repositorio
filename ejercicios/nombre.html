@@ -1,0 +1,29 @@
+<form id="miFormulario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+  
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required>
+  
+    <button type="submit">Enviar</button>
+  </form>
+  
+  <div id="resultado"></div>
+  
+  <script>
+    function capturarValores() {
+      var nombre = document.getElementById("nombre").value;
+      var apellido = document.getElementById("apellido").value;
+  
+      var resultado = document.getElementById("resultado");
+      resultado.textContent = "Nombre: " + nombre + ", Apellido: " + apellido;
+  
+      document.getElementById("miFormulario").reset();
+    }
+  
+    document.getElementById("miFormulario").addEventListener("submit", function(event) {
+      event.preventDefault();
+      capturarValores();
+    });
+  </script>
+  
